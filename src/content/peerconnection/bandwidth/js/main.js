@@ -9,7 +9,16 @@
 
 'use strict';
 
-const remoteVideo = document.querySelector('video#remoteVideo');
+const remoteVideo1 = document.querySelector('video#remoteVideo1');
+const remoteVideo2 = document.querySelector('video#remoteVideo2');
+const remoteVideo3 = document.querySelector('video#remoteVideo3');
+const remoteVideo4 = document.querySelector('video#remoteVideo4');
+const remoteVideo5 = document.querySelector('video#remoteVideo5');
+const remoteVideo6 = document.querySelector('video#remoteVideo6');
+const remoteVideo7 = document.querySelector('video#remoteVideo7');
+const remoteVideo8 = document.querySelector('video#remoteVideo8');
+const remoteVideo9 = document.querySelector('video#remoteVideo9');
+const remoteVideo10 = document.querySelector('video#remoteVideo10');
 const localVideo = document.querySelector('video#localVideo');
 const callButton = document.querySelector('button#callButton');
 const hangupButton = document.querySelector('button#hangupButton');
@@ -135,8 +144,21 @@ function hangup() {
 }
 
 function gotRemoteStream(e) {
-  if (remoteVideo.srcObject !== e.streams[0]) {
-    remoteVideo.srcObject = e.streams[0];
+  setRemoteStream(e, remoteVideo1);
+  setRemoteStream(e, remoteVideo2);
+  setRemoteStream(e, remoteVideo3);
+  setRemoteStream(e, remoteVideo4);
+  setRemoteStream(e, remoteVideo5);
+  setRemoteStream(e, remoteVideo6);
+  setRemoteStream(e, remoteVideo7);
+  setRemoteStream(e, remoteVideo8);
+  setRemoteStream(e, remoteVideo9);
+  setRemoteStream(e, remoteVideo10);
+}
+
+function setRemoteStream(e, remoteVideoN) {
+  if (remoteVideoN.srcObject !== e.streams[0]) {
+    remoteVideoN.srcObject = e.streams[0];
     console.log('Received remote stream');
   }
 }
